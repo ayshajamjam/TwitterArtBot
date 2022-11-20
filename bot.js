@@ -1,6 +1,3 @@
-// Reference: https://github.com/ttezel/twit
-// Making API requests with nodejs: https://hackersandslackers.com/making-api-requests-with-nodejs/
-
 var Twit = require('twit'); // Import Twit library
 var cronJob = require("cron").CronJob;
 const fetch = (...args) =>
@@ -83,16 +80,16 @@ function tweet() {
         }
         T.post('statuses/update', tweet, function(err, data, response) {
             console.log(data.text)
-            console.log("Image Src: " + art_img);
+            console.log("Image Src: " + art_img + "\n");
         })
     }
 }
 
-// const job = new CronJob("* * * * *", () => {
-//     console.log("Cronjob started.");
-//     getArtwork();
-// })
+const job = new CronJob("* * * * *", () => {
+    console.log("Cronjob started.");
+    getArtwork();
+})
 
-// job.start();
+job.start();
 
 getArtwork();
