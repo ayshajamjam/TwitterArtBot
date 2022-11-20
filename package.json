@@ -1,0 +1,31 @@
+{
+  "name": "twitter_bot",
+  "version": "1.0.0",
+  "description": "Making a twitter bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayshajamjam/TwitterBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayshajamjam/TwitterBot/issues"
+  },
+  "homepage": "https://github.com/ayshajamjam/TwitterBot#readme",
+  "dependencies": {
+    "cron": "^2.1.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "is-corrupted-jpeg": "^1.0.2",
+    "node-fetch": "^3.3.0",
+    "png-validator": "^1.1.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "twit": "^2.2.11"
+  }
+}
