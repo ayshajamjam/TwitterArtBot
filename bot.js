@@ -63,7 +63,7 @@ var T = new Twit(config);
 // Post a new tweet
 function tweet() {
     new_tweet = 
-    `Title: ${art_title}, ${art_date}\nArtist: ${art_artist}\nType: ${art_type}`
+    `Hi, @sjamaln\nTitle: ${art_title}, ${art_date}\nArtist: ${art_artist}\nType: ${art_type}`
 
     var params = {encoding: 'base64'}
 
@@ -87,7 +87,8 @@ function tweet() {
 // Just run at least once befroe CronJob starts
 getArtwork();
 
-const job = new CronJob("* * * * *", () => {
+// Every day 5pm UTC, 12pm EST
+const job = new CronJob("0 17 * * *", () => {
     console.log("Cronjob started.");
     getArtwork();
 })
