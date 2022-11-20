@@ -5,6 +5,7 @@ const fetch = (...args) =>
 var request = require('request');
 var fs = require('fs');
 const request_promise = require('request-promise');
+require('dotenv').config();
 
 let art_title = "";
 let art_artist = "";
@@ -61,8 +62,6 @@ var T = new Twit(config);
 
 // Post a new tweet
 function tweet() {
-    var rand = Math.floor(Math.random()*100);
-
     new_tweet = 
     `Title: ${art_title}, ${art_date}\nArtist: ${art_artist}\nType: ${art_type}`
 
@@ -85,11 +84,12 @@ function tweet() {
     }
 }
 
+// Just run at least once befroe CronJob starts
+getArtwork();
+
 const job = new CronJob("* * * * *", () => {
     console.log("Cronjob started.");
     getArtwork();
 })
 
 job.start();
-
-getArtwork();

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ayshajamjam/TwitterBot#readme",
   "dependencies": {
     "cron": "^2.1.0",
+    "dotenv": "^16.0.3",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "https": "^1.0.0",
