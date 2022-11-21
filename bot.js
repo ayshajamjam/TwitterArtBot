@@ -88,7 +88,7 @@ function tweet() {
 getArtwork();
 
 // Every day 5pm UTC, 12pm EST
-const job = new CronJob("0 17 * * *", () => {
+const job = new CronJob("25 23 * * *", () => {
     console.log("Cronjob started.");
     getArtwork();
 })
