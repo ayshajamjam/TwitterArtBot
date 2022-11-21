@@ -4,6 +4,8 @@ Built using Node.js, Twit, CronJob (for schedule tweets), Heroku
 
 Twitter site: https://twitter.com/tweetbot365
 
+To run locally: node bot.js
+
 References:
 - Twit: https://github.com/ttezel/twit
 - Making API requests with nodejs: https://hackersandslackers.com/making-api-requests-with-nodejs/
