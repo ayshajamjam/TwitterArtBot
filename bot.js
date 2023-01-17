@@ -39,7 +39,13 @@ function getArtwork() {
                 };
                   
                 download(art_img, 'img.png', function(){
+                    console.log("Title: " + art_title);
+                    console.log("Artist: " + art_artist);
+                    console.log("Date: " + art_date);
+                    console.log("Type: " + art_type);
+                    console.log("Image Src: " + art_img);
                     tweet();
+
                 });
             }
             else {
@@ -59,7 +65,7 @@ function getArtwork() {
 var config = require('./config');
 const { CronJob } = require('cron');
 var T = new Twit(config);
-
+  
 // Post a new tweet
 function tweet() {
     new_tweet = 
@@ -78,17 +84,21 @@ function tweet() {
             media_ids: [id]
         }
         T.post('statuses/update', tweet, function(err, data, response) {
-            console.log(data.text)
-            console.log("Image Src: " + art_img + "\n");
+            console.log(err);
         })
     }
 }
 
-// // Just run at least once befroe CronJob starts
+// Just run at least once befroe CronJob starts
 getArtwork();
 
 // Every day 5pm UTC, 12pm EST
-const job = new CronJob("0 0 * * *", () => {
+// const job = new CronJob("0 0 * * *", () => {
+//     console.log("Cronjob started.");
+//     getArtwork();
+// })
+
+const job = new CronJob("* * * * *", () => {
     console.log("Cronjob started.");
     getArtwork();
 })
