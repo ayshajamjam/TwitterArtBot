@@ -85,7 +85,7 @@ function tweet() {
 }
 
 // // Just run at least once befroe CronJob starts
-// getArtwork();
+getArtwork();
 
 // Every day 5pm UTC, 12pm EST
 const job = new CronJob("0 0 * * *", () => {
