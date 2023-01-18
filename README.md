@@ -2,7 +2,7 @@
 
 Built using Node.js, Twit, CronJob (for schedule tweets), Heroku
 
-Twitter site: https://twitter.com/tweetbot365
+Twitter site: https://twitter.com/helloArtBot
 
 To run locally: node bot.js
 
